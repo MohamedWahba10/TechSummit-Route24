@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/TechSummit-Route24/static/css/main.cf14b43e.css",
+    "main.js": "/TechSummit-Route24/static/js/main.5399d13e.js",
+    "static/js/453.bea66239.chunk.js": "/TechSummit-Route24/static/js/453.bea66239.chunk.js",
+    "index.html": "/TechSummit-Route24/index.html",
+    "main.cf14b43e.css.map": "/TechSummit-Route24/static/css/main.cf14b43e.css.map",
+    "main.5399d13e.js.map": "/TechSummit-Route24/static/js/main.5399d13e.js.map",
+    "453.bea66239.chunk.js.map": "/TechSummit-Route24/static/js/453.bea66239.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf14b43e.css",
+    "static/js/main.5399d13e.js"
+  ]
+}
