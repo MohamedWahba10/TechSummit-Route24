@@ -1,24 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import CustomerTable from './components/CustomerTable/CustomerTable';
+import TransactionChart from './components/CustomerTable/TransactionChart/TransactionChart';
+import axios from 'axios';
 
 function App() {
+  const [customers, setCustomers] = useState([]);
+  const [transactions, setTransactions] = useState([]);
+  const [selectedCustomer, setSelectedCustomer] = useState(null);
+
+  const getCustomerData = async () => {
+    try {
+      const response = await axios.get('http://localhost:3001/customers');
+      setCustomers(response.data);
+      console.log("customers -->", response.data);
+    } catch (error) {
+      console.error("Error fetching customer data:", error);
+    }
+  };
+
+  const getTransactionData = async () => {
+    try {
+      const response = await axios.get('http://localhost:3001/transactions');
+      setTransactions(response.data);
+      console.log("transactions -->", response.data);
+    } catch (error) {
+      console.error("Error fetching transaction data:", error);
+    }
+  };
+
+  useEffect(() => {
+    getCustomerData();
+    getTransactionData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CustomerTable
+        customers={customers}
+        transactions={transactions}
+        onSelectCustomer={setSelectedCustomer} // Pass setSelectedCustomer to handle selection
+      />
+      {selectedCustomer && (
+        <TransactionChart
+          customer={selectedCustomer}
+          transactions={transactions}
+        />
+      )}
+    </>
   );
 }
 
