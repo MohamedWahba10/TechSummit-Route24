@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CustomerTable from './components/CustomerTable/CustomerTable';
-import TransactionChart from './components/CustomerTable/TransactionChart/TransactionChart';
+import TransactionChart from './components/TransactionChart/TransactionChart';
 import axios from 'axios';
 
 function App() {

@@ -12,7 +12,7 @@
     { "id": 10, "name": "Fatma Samir" }
   ],
   "transactions": [
-    { "id": 1, "customer_id": 1, "date": "2022-01-01", "amount": 1000 },
+    { "id": 1, "customer_id": 1, "date": "2022-01-01", "amount": 1200 },
     { "id": 2, "customer_id": 1, "date": "2022-01-02", "amount": 2000 },
     { "id": 3, "customer_id": 2, "date": "2022-01-01", "amount": 550 },
     { "id": 4, "customer_id": 3, "date": "2022-01-01", "amount": 500 },
